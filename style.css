@@ -1,0 +1,243 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+#main {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+}
+#answer {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 28px;
+  text-align: center;
+  border: 2px solid black;
+  width: 200px;
+  height: 32px;
+}
+
+table {
+  border-collapse: collapse;
+  font-size: 20px;
+  width: 220px;
+  height: 240px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  table-layout: fixed;
+}
+table,
+tr,
+td {
+  border: 3px solid transparent;
+  box-shadow: 2px 2px 3px grey;
+  text-align: center;
+  cursor: pointer;
+  
+}
+
+td {
+  padding: 10px;
+  cursor: pointer;
+}
+.countdown {
+  position: absolute;
+  left: 87%;
+  top: 3%;
+  border: 1px solid black;
+  padding: 8px;
+  border-radius: 100%;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#game {
+  display: none;
+}
+td:hover {
+  color: white;
+  background: black;
+  font-size: 28;
+  z-index: 3;
+  cursor: pointer;
+}
+#pauseMenu {
+  display: none;
+}
+#countdown1 {
+  display: none;
+}
+#countdown2 {
+  display: none;
+}
+#countdown3 {
+  display: none;
+}
+#finish1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid transparent;
+  box-shadow: 2px 3px 4px grey;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 200px;
+  height: 450px;
+  display: none;
+}
+
+#finish2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid transparent;
+  box-shadow: 2px 3px 4px grey;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 200px;
+  height: 380px;
+  display: none;
+}
+
+#finish3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 1px solid transparent;
+  box-shadow: 2px 3px 4px grey;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 200px;
+  height: 375px;
+  display: none;
+}
+
+#qualification {
+  font-size: 45px;
+}
+
+#pauseMenu {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  border: 1px solid transparent;
+  box-shadow: 2px 2px 3px grey;
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+  font-size: large;
+}
+
+#msgtitle {
+  position: absolute;
+  left: 30%;
+  tranform: translate(-50%, -50%);
+  animation: msgAnimation 1s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#title1 {
+  animation: titleAnimation 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: lineal;
+  animation-direction: alternate;
+}
+
+#title2 {
+  animation: titleAnimation 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: lineal;
+  animation-direction: alternate;
+}
+
+#title {
+  transform: rotate(-15deg);
+  margin-top: 50px;
+  border: 2px solid transparent;
+  box-shadow: 2px 2px 3px grey;
+  padding: 15px;
+  display: inline-block;
+  border-radius: 20px;
+  font-size: 32px;
+}
+#timetrial {
+  display: inline-block;
+  background: #00ff00;
+  color: white;
+  padding: 25px;
+  border-radius: 50%;
+  transform: rotate(-15deg);
+}
+#survival {
+  display: inline-block;
+  background: #1200ff;
+  color: white;
+  padding: 25px;
+  border-radius: 50% 20% 30%;
+  transform: rotate(-15deg);
+}
+#hardcore {
+  display: inline-block;
+  background: #f20012;
+  color: white;
+  padding: 25px;
+  border-radius: 30% 20% 50%;
+  transform: rotate(-15deg);
+}
+@keyframes titleAnimation {
+  0% {
+    color: white;
+  }
+  50% {
+    color: black;
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes msgAnimation {
+  0% {
+    font-size: 15px;
+  }
+  100% {
+    font-size: small;
+  }
+}
+
+.in {
+  width: 220px;
+  border: 1px solid transparent;
+  box-shadow: 2px 2px 3px grey;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  background: white;
+  display: none;
+}
+.btn {
+  border: 2px solid green;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 10px;
+  background: #00ff12;
+  outline: none;
+  cursor: pointer;
+  color: white;
+}

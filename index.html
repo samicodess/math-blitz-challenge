@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Blitz Challenge</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="load()">
+    <!--? Introduction to the game mode time trial -->
+
+    <div class="in" id="timeTrialIn" align="center">
+      <span style="position: absolute; cursor: pointer; left: 90%; color: red" onclick="closeTimeTrialIn()"
+        >X</span
+      >
+      <h2 style="color: green; cursor: pointer;">Time Trial</h2>
+      <p>
+        Welcome to Time Trial Mode, In This Mode You Have 120 Seconds To
+        Complete All Operations And In The End You Will Get A Rank ¡You Have To
+        Be Very Fast!
+      </p>
+      <br />
+      <button class="btn" onclick="startTimeTrial()">Start</button>
+    </div>
+
+    <!-- ? Introduction to the game mode survival -->
+    <div class="in" id="survivalIn" align="center">
+      <span style="position: absolute; cursor: pointer; left: 90%; color: red" onclick="closeSurvivalIn()"
+        >X</span
+      >
+
+      <h2 style="color: green; cursor: pointer;">Survival</h2>
+
+      <p>
+        Welcome, In This Game Mode You Have To Complete Operations To Stay In
+        The Game, If You Answer Correctly You Will Get More Time But If You
+        Answer Wrong I Will Take A Few More Seconds. Come on!
+      </p>
+      <br />
+      <button class="btn" onclick="startSurvival()">Start</button>
+    </div>
+
+    <!--? introduction to the game mode hard core -->
+    <div class="in" id="hardcoreIn" align="center">
+      <span style="position: absolute; cursor: pointer; left: 90%; color: red" onclick="closeHardCoreIn()"
+        >X</span
+      >
+
+      <h2 style="color: green; cursor: pointer;">Hard Core</h2>
+
+      <p>
+        Welcome, In This Game Mode You Have <b>3</b> Seconds To Complete Each
+        Operation That Appears. But If You Make A Mistake You Will Lose. Let's
+        see if you are done/lose :)
+      </p>
+      <br />
+      <button class="btn" style="cursor: pointer;" onclick="startHardCore()">Start</button>
+    </div>
+
+    <!--? the menu of the game  -->
+    <div id="menu" align="center" style="display: none">
+      <h2 id="title">
+        <span id="title1">King of </span><span id="title2">Addition</span>
+      </h2>
+      <br />
+      <p id="msgtitle" style="transform: rotate(-15deg); font-size: small">
+        Choose game mode!!
+      </p>
+      <br />
+      <br />
+      <br />
+      <br />
+      <h3 id="timetrial" style="cursor: pointer;"  onclick="timeTrial()">Time Trial</h3>
+      <h3 id="survival" style="cursor: pointer;"  onclick="survival()">Survival</h3>
+      <h3 id="hardcore" style="cursor: pointer;"  onclick="hardCore()">Hard Core</h3>
+      <br />
+      <br />
+      <br />
+      <p id="creator" style="text-align: center">created by sami</p>
+    </div>
+
+    <!--? the pause menu -->
+    <div id="pauseMenu" style="text-align: center">
+      <span
+        style="
+          position: absolute;
+          left: 90%;
+          top: 5%;
+          color: red;
+          font-size: 20px;
+          cursor: pointer;
+        "
+        onclick="closePauseMenu()"
+        >x</span
+      >
+      <h2 style="color: cyan; cursor: pointer;">Paused</h2>
+      <br />
+      <span><span style="color: red; padding-right: 25px;" onclick="retry()">Retry</span> <span style="color: orange;" onclick="menuOfPaused()">Menu</span></span>
+      <p style="color: green; cursor: pointer;" onclick="continUe()">Continue</p>
+    </div>
+
+    <!--? the game -->
+    <div id="game">
+        <span onclick="pause()" style="padding: 5px; font-size: small; color: purple;">Pause</span>
+        <h2 id="wtr" style="text-align: center;">How much is the result?</h2>
+        <div class="countdown">
+            <div id="countdown1"></div>
+            <div id="countdown2"></div>
+            <div id="countdown3"></div>
+        </div>
+        <div id="main"><span id="dig1">8</span> <span id="op">+ </span> <span id="dig2">9</span> <span style="color: cyan;"> = </span> <span id="result">?</span></div>
+        <div id="answer"></div>
+
+
+        <!--! the keyboard -->
+
+        <table>
+            <tr>
+                <td onclick="del()" style="color: red; background: transparent;">Del</td>
+                <td onclick="enter()" style="color: #21FC0C; background: transparent; cursor: pointer;">Enter</td>
+
+                <td onclick="dig(0)">0</td>
+            </tr>
+            <tr>
+                <td onclick="dig(1)">1</td>
+                <td onclick="dig(2)">2</td>
+                <td onclick="dig(3)">3</td>
+            </tr>
+            <tr>
+                <td onclick="dig(4)">4</td>
+                <td onclick="dig(5)">5</td>
+                <td onclick="dig(6)">6</td>
+            </tr>
+            <tr>
+                <td onclick="dig(7)">7</td>
+                <td onclick="dig(8)">8</td>
+                <td onclick="dig(9)">9</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- ? the finish of time trial game mode -->
+
+    <div id="finish1" style="text-align: center;">
+    <h2 style="color: green;">¡You Finish!</h2> <br>
+    <p style="color: green;">Corrects: <span id="corrects">0</span></p>
+    <p style="color: red;">Incorrects: <span id="incorrects">0</span></p>
+    <p style="color: orange;">Your qualification is: <p id="qualification">A</p></p><small id="msg"></small> <br> <br>
+    <span onclick="menu()" style="position: absolute; left: 13%; color: green;">Menu</span>
+    <span onclick="retryFinish()" style="position: absolute; left: 70%; color: orange;">Retry</span>
+    </div>
+
+    <!-- ? the finish of survival game mode  -->
+
+    <div id="finish2" style="text-align: center;">
+        <h2 style="color: green;">¡You Finish!</h2> <br>
+        <p style="color: blue;">Your time is:</p>
+        <p><span id="minutes">0</span>minutes and <span id="seconds">0</span> seconds</p> <br> <br>
+        <p style="color: #54cd0d;">¡Compete with your friends for the best time! :)</p> <br> <br>
+        <span onclick="menu()" style="position: absolute; left: 13%; color: green;">Menu</span>
+        <span onclick="retryFinish()" style="position: absolute; left: 70%; color: orange;">Retry</span>
+        </div>
+
+
+        <!-- ? the finish of hard core game mode -->
+        <div id="finish3" style="text-align: center;">
+            <h2 style="color: red;">¡You Lose!</h2> <br>
+            <p style="color:gold;">Your score is:</p>
+            <p id="score" style="color: #54CD0F; font-size: 20px;">0</p><br /><br />
+            <p style="color: #0155DF;">¡Compete with your friends for the best record! :)</p><br /><br />
+            <span style="position: absolute; left: 13%; color: green;" onclick="menu()">Menu</span>
+            <span style="position: absolute; left: 70%; color: orange;" onclick="retryFinish()">Retry</span>
+            </div>
+
+
+
+    <script src="script.js"></script>
+  </body>
+</html>
